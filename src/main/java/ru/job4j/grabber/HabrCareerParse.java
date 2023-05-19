@@ -13,12 +13,12 @@ public class HabrCareerParse {
 
     private static final String SOURCE_LINK = "https://career.habr.com";
     private static int pageNumber = 1;
-    private static final String PAGE_LINK = String.format("%s/vacancies/java_developer?page=%s",
-            SOURCE_LINK, pageNumber);
+    private static final String PAGE_LINK = String.format("%s/vacancies/java_developer", SOURCE_LINK);
 
     public static void main(String[] args) throws IOException {
         while (pageNumber <= 5) {
-            Connection connection = Jsoup.connect(PAGE_LINK);
+            String page = String.format("%s?page=%d", PAGE_LINK, pageNumber);
+            Connection connection = Jsoup.connect(page);
             Document document = connection.get();
             Elements rows = document.select(".vacancy-card__inner");
             rows.forEach(row -> {
