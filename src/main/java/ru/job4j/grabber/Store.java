@@ -9,4 +9,6 @@ public interface Store {
     List<Post> getAll();
 
     Post findById(int id);
+
+    void close() throws Exception;
 }
