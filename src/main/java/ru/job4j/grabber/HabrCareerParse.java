@@ -26,7 +26,7 @@ public class HabrCareerParse implements Parse {
     }
 
     public static void main(String[] args) throws IOException {
-        HabrCareerDateTimeParser habrCareerDateTimeParser = new HabrCareerDateTimeParser();
+        DateTimeParser habrCareerDateTimeParser = new HabrCareerDateTimeParser();
         HabrCareerParse habrCareerParse = new HabrCareerParse(habrCareerDateTimeParser);
         List<Post> postList = habrCareerParse.list(PAGE_LINK);
         for (Post posts : postList) {
