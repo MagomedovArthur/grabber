@@ -104,15 +104,13 @@ public class PsqlStore implements Store {
         properties.load(inputStream);
         PsqlStore psqlStore = new PsqlStore(properties);
         List<Post> posts = habrParsing();
-      /* for (Post post : posts) {
+        for (Post post : posts) {
             psqlStore.save(post);
-        } */
-
-      /*  List<Post> allVacancies = psqlStore.getAll();
+        }
+        List<Post> allVacancies = psqlStore.getAll();
         for (Post post : allVacancies) {
             System.out.println(post);
-        } */
-
+        }
         System.out.println(psqlStore.findById(1));
     }
 
