@@ -33,8 +33,8 @@ public class PsqlStore implements Store {
     public void save(Post post) {
         try (PreparedStatement statement =
                      cnn.prepareStatement("INSERT INTO post"
-                             + "(name, text, link, created) VALUES (?, ?, ?, ?) " +
-                             "ON CONFLICT (link) DO NOTHING")) {
+                             + "(name, text, link, created) VALUES (?, ?, ?, ?) "
+                             + "ON CONFLICT (link) DO NOTHING")) {
             statement.setString(1, post.getTitle());
             statement.setString(2, post.getDescription());
             statement.setString(3, post.getLink());
