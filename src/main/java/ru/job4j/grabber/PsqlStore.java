@@ -56,8 +56,8 @@ public class PsqlStore implements Store {
                     LocalDateTime localDateTime = timestamp.toLocalDateTime();
                     result.add(new Post(
                             resultSet.getString("name"),
-                            resultSet.getString("text"),
                             resultSet.getString("link"),
+                            resultSet.getString("text"),
                             localDateTime
                     ));
                 }
@@ -79,8 +79,8 @@ public class PsqlStore implements Store {
                     LocalDateTime localDateTime = timestamp.toLocalDateTime();
                     post = new Post(
                             resultSet.getString("name"),
-                            resultSet.getString("text"),
                             resultSet.getString("link"),
+                            resultSet.getString("text"),
                             localDateTime
                     );
                 }
